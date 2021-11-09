@@ -1,6 +1,6 @@
 package post
 
-import "github.com/mauwahid/go-web-api/internal/platform/errors"
+import "errors"
 
 type Request struct {
 	ID          int64
@@ -22,4 +22,5 @@ func (r *Request) CreateValidation() error {
 }
 
 type Response struct {
+	Request
 }

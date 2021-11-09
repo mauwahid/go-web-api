@@ -1,8 +1,9 @@
 package http
 
 import (
-	"github.com/julienschmidt/httprouter"
 	"net/http"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 func (s *Server) Routes() *httprouter.Router {
@@ -10,6 +11,4 @@ func (s *Server) Routes() *httprouter.Router {
 	router.HandlerFunc(http.MethodGet, "/", s.healthCheck)
 	router.HandlerFunc(http.MethodPost, "/post/create", s.postCreate)
 
-	router.
-	return router
 }
