@@ -1,0 +1,23 @@
+{
+  "appName" : "contact",
+  "version" : "0.1",
+  "httpServer" : {
+    "port" : 80,
+    "readTimeout" : 10000,
+    "writeTimeout" : 10000
+  },
+  "mongo": {
+    "address": [
+      "mongodb.local:27017"
+    ],
+    "replicaSet": "",
+    "dbName": "contact",
+    "username": "",
+    "pass": "",
+    "maxPoolSize": 5,
+    "minPoolSize": 2,
+    "maxConnIdleTime": 30,
+    "readPreference": "secondaryPreferred",
+    "timeout": 60
+  }
+}

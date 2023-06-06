@@ -25,7 +25,7 @@ func StartHttp() {
 	fmt.Println("==== Start Run HTPP Server ====")
 
 	httpServer := newServer()
-	port := fmt.Sprintf(":%v", httpServer.cfg.Http.Port)
+	port := fmt.Sprintf(":%v", httpServer.cfg.HttpServer.Port)
 
 	// start server
 	go func() {
@@ -54,6 +54,8 @@ func newServer() *Server {
 	}
 	r.setupHandler(container)
 	r.setupApiRoute()
+	fmt.Printf("==== Start App %s ====\n", container.Config.AppName)
+	fmt.Printf("==== Version %s ====\n", container.Config.Version)
 	return r
 }
 

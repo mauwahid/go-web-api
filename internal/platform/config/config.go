@@ -9,26 +9,29 @@ import (
 )
 
 type Config struct {
-	AppName  string
-	Http     Http
-	Database Database
+	AppName    string      `json:"appName"`
+	Version    string      `json:"version"`
+	HttpServer Http        `json:"httpServer"`
+	Mongo      MongoConfig `json:"mongo"`
+}
+
+type MongoConfig struct {
+	Address         []string      `json:"address" `
+	ReplicaSet      string        `json:"replicaSet"`
+	DBName          string        `json:"dbName"`
+	MaxPoolSize     uint64        `json:"maxPoolSize"`
+	MinPoolSize     uint64        `json:"minPoolSize"`
+	MaxConnIdleTime time.Duration `json:"maxConnIdleTime"`
+	Username        string        `json:"username"`
+	Pass            string        `json:"pass"`
+	ReadPreference  string        `json:"readPreference"`
+	Timeout         time.Duration `json:"timeout"`
 }
 
 type Http struct {
-	Port         int
-	ReadTimeout  time.Duration
-	WriteTimeout time.Duration
-}
-
-type Database struct {
-	Host     string
-	Port     string
-	Name     string
-	Schema   string
-	Username string
-	Password string
-	MaxCon   string
-	IdleCon  int
+	Port         int           `json:"port"`
+	ReadTimeout  time.Duration `json:"readTimeout"`
+	WriteTimeout time.Duration `json:"writeTimeout"`
 }
 
 func GetConfig() *Config {
