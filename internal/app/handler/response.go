@@ -14,3 +14,11 @@ var (
 	StatusSuccess = Status{"00", "Success"}
 	StatusFailed  = Status{"99", "Failed"}
 )
+
+func RenderResponse(data interface{}, err error) (res DefaultResponse) {
+	if err != nil {
+		return DefaultResponse{Status: StatusFailed}
+	} else {
+		return DefaultResponse{Status: StatusSuccess, Data: data}
+	}
+}

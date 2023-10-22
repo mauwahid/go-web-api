@@ -12,7 +12,7 @@ type Container struct {
 }
 
 type Service struct {
-	Address handler.AddressService
+	Address handler.ContactService
 }
 
 type Repository struct {

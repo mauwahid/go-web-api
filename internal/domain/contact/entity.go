@@ -7,3 +7,10 @@ type Contact struct {
 	PhoneNumber string
 	Email       string
 }
+
+func (c *Contact) Validate() bool {
+	if c.FirstName == "" {
+		return false
+	}
+	return true
+}

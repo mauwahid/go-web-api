@@ -5,6 +5,6 @@ import (
 	"github.com/mauwahid/go-web-api/internal/domain/contact"
 )
 
-type AddressService interface {
+type ContactService interface {
 	Create(c context.Context, entity contact.Contact) error
 }
